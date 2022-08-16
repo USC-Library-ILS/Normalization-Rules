@@ -1,0 +1,58 @@
+rule "move relation to local field 1"
+when
+exist "dc"."relation"
+then
+move "dc"."relation" to "discovery"."local1"
+end
+
+rule "move relation to local field 7"
+when
+exist "dc"."source"
+then
+move "dc"."source" to "discovery"."local7"
+end
+
+
+rule "move relation to local field 5"
+when
+exist "dc"."rights"
+then
+move "dc"."rights" to "discovery"."local5"
+end
+
+rule "clean up dctype"
+when
+exist "dc"."type"
+then
+remove "dc"."type" if equals "1 photograph: b&amp;w"
+remove "dc"."type" if equals "150 p."
+remove "dc"."type" if equals "2 photographs: b&amp;w"
+remove "dc"."type" if equals "3 photographs: b&amp;w"
+remove "dc"."type" if equals "36 photographs: b&amp;w"
+remove "dc"."type" if equals "4 photographs: b&amp;w"
+remove "dc"."type" if equals "9 photographs: b&amp;w"
+remove "dc"."type" if equals "album [Record type]"
+remove "dc"."type" if equals "article/chapter [Type of Title]"
+remove "dc"."type" if equals "Electronically uploaded by the author"
+remove "dc"."type" if equals "image; text [Record Type]"
+remove "dc"."type" if equals "interview [Type of title]"
+remove "dc"."type" if equals "issue [Record type]"
+remove "dc"."type" if equals "issue [Type of title]"
+remove "dc"."type" if equals "item [Record type]"
+remove "dc"."type" if equals "item; [Record Type]"
+remove "dc"."type" if equals "item\\ [Record Type]"
+remove "dc"."type" if equals "itm; [Record Type]"
+remove "dc"."type" if equals "journal article [Type of Title]"
+remove "dc"."type" if equals "newspaper [Type of Alternate Title]"
+remove "dc"."type" if equals "newspaper [Type of Title]"
+remove "dc"."type" if equals "original [Type of alternate title]"
+remove "dc"."type" if equals "original caption [Type of Alternate Title]"
+remove "dc"."type" if equals "series [Record type]"
+remove "dc"."type" if equals "series [Type of alternate title]"
+remove "dc"."type" if equals "series [Type of Title]"
+remove "dc"."type" if equals "short [Type of Alternate Title]"
+remove "dc"."type" if equals "spine; short [Type of Alternate Title]"
+remove "dc"."type" if equals "texts [Record type]"
+remove "dc"."type" if equals "translation [Type of title]"
+remove "dc"."type" if equals "uniform [Type of Alternate Title]"
+end
