@@ -96,7 +96,7 @@ priority 30
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."alternate_creator" to TEMP"1"
 end
-rule "Primo VE Display - contributor 700"
+rule "Primo VE Display - contributor/Creator 700"
 	when
 		 MARC."700" has any "a,b,c,d,e,j,q,u" AND
 		 MARC.control is "001"
@@ -114,7 +114,7 @@ rule "Primo VE Display - contributor 700"
 end
 
 
-rule "Primo VE Display - contributor 710"
+rule "Primo VE Display - contributor/Creator 710"
 	when
 		MARC."710" has any "a,b,c,d,e"
 	then
@@ -129,7 +129,7 @@ rule "Primo VE Display - contributor 710"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		create pnx."display"."creator" with TEMP"1"
 end
-rule "Primo VE Display - contributor 711"
+rule "Primo VE Display - contributor/Creator 711"
 	when
 		MARC."711" has any "a,b,c,d,n"
 	then
@@ -145,7 +145,7 @@ rule "Primo VE Display - contributor 711"
 		create pnx."display"."creator" with TEMP"1"
 end
 
-rule "Primo VE Display - alternate contributor 880-700"
+rule "Primo VE Display - alternate contributor/Creator 880-700"
 	when
 		 MARC."880" has any "a,b,c,d,e,j,q,u" AND
 		 MARC."880"."6" match "700-.*"
@@ -162,7 +162,7 @@ rule "Primo VE Display - alternate contributor 880-700"
 		create pnx."display"."alternate_creator" with TEMP"1"
 end
 
-rule "Primo VE Display - alternate contributor 880-710 "
+rule "Primo VE Display - alternate contributor/Creator 880-710 "
 	when
 		MARC."880" has any "a,b,c,d,e" AND
 		MARC."880"."6" match "710-.*"
@@ -179,7 +179,7 @@ rule "Primo VE Display - alternate contributor 880-710 "
 		create pnx."display"."alternate_creator" with TEMP"1"
 end
 
-rule "Primo VE Display - alternate contributor 880-711"
+rule "Primo VE Display - alternate contributor/Creator 880-711"
 	when
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "711-.*"
