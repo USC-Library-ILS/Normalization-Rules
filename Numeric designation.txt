@@ -22,7 +22,7 @@ then
 	concatenate existing with delimiter (TEMP"1",TEMP"2",": ")
 # remove extra colon if it was already there in data
 	replace string by string (TEMP"1","::",":")
-	create pnx."display"."lds86" with TEMP"1"
+	create pnx."display"."lds21" with TEMP"1"
 end
 
 rule "Primo VE - Lds21a"
@@ -45,7 +45,7 @@ then
 	replace string by string (TEMP"1",",,",",")
 	#remove comma from end
 	replace string by string (TEMP"1",", $","")
-	create pnx."display"."lds86" with TEMP"1"
+	create pnx."display"."lds21" with TEMP"1"
 end
 
 rule "Primo VE - Lds21b"
@@ -69,7 +69,7 @@ then
 	concatenate existing with delimiter (TEMP"1",TEMP"2",": ")
 # remove extra colon if it was already there in data
 	replace string by string (TEMP"1","::",":")
-	create pnx."display"."lds86" with TEMP"1"
+	create pnx."display"."lds21" with TEMP"1"
 end
 
 rule "Primo VE - Lds21c"
@@ -88,5 +88,5 @@ then
 	replace string by string (TEMP"1","; \\("," \\(")
 	#remove semicolon from end
 	replace string by string (TEMP"1",";$","")
-	create pnx."display"."lds86" with TEMP"1"
+	create pnx."display"."lds21" with TEMP"1"
 end
